@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Apresentação de slides com HTML, CSS e JavaScript">
+    <meta name="author" content="Igor Nascimento">
+    <meta name="generator" content="Igor Nascimento">
+    <title>Apresentação de Slides</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid #fff;
+        }
+        .slides {
+            display: none;
+            width: 100%;
+        }
+        .active {
+            display: block;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .ig{
+            background-color: rgba(0,0,0,0.8);
+            color: red;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <img class="slides active" src="img/001.jpeg" alt="Slide 1">
+    <img class="slides" src="img/002.jpeg" alt="Slide 2">
+    <img class="slides" src="img/003.jpeg" alt="Slide 3">
+    <img class="slides" src="img/004.jpeg" alt="Slide 4">
+    <img class="slides" src="img/005.jpeg" alt="Slide 5">
+    <img class="slides" src="img/006.jpeg" alt="Slide 6">
+    <img class="slides" src="img/007.jpeg" alt="Slide 7">
+    <img class="slides" src="img/008.jpeg" alt="Slide 8">
+    <img class="slides" src="img/009.jpeg" alt="Slide 9">
+    <img class="slides" src="img/010.jpeg" alt="Slide 10">
+    <img class="slides" src="img/011.jpeg" alt="Slide 11">
+    <img class="slides" src="img/012.jpeg" alt="Slide 12">
+    <img class="slides" src="img/013.jpeg" alt="Slide 13">
+    <img class="slides" src="img/014.jpeg" alt="Slide 14">
+    <img class="slides" src="img/015.jpeg" alt="Slide 15">
+    <img class="slides" src="img/016.jpeg" alt="Slide 16">
+    <img class="slides" src="img/017.jpeg" alt="Slide 17">
+    <img class="slides" src="img/018.jpeg" alt="Slide 18">
+    <img class="slides" src="img/019.jpeg" alt="Slide 19">
+    <img class="slides" src="img/020.jpeg" alt="Slide 20">
+    <img class="slides" src="img/021.jpeg" alt="Slide 21">
+    <img class="slides" src="img/022.jpeg" alt="Slide 22">
+    <img class="slides" src="img/023.jpeg" alt="Slide 23">
+    <img class="slides" src="img/024.jpeg" alt="Slide 24">
+    <img class="slides" src="img/025.jpeg" alt="Slide 25">
+    <img class="slides" src="img/026.jpeg" alt="Slide 26">
+    <img class="slides" src="img/027.jpeg" alt="Slide 27">
+    <img class="slides" src="img/028.jpeg" alt="Slide 28">
+    <img class="slides" src="img/029.jpeg" alt="Slide 29">
+    <img class="slides" src="img/030.jpeg" alt="Slide 30">
+    <img class="slides" src="img/031.jpeg" alt="Slide 31">
+    <img class="slides" src="img/032.jpeg" alt="Slide 32">
+    <img class="slides" src="img/033.jpeg" alt="Slide 33">
+    <img class="slides" src="img/034.jpeg" alt="Slide 34">
+    <img class="slides" src="img/035.jpeg" alt="Slide 35">
+    <img class="slides" src="img/036.jpeg" alt="Slide 36">
+    <img class="slides" src="img/037.jpeg" alt="Slide 37">
+    <img class="slides" src="img/038.jpeg" alt="Slide 38">
+    <img class="slides" src="img/039.jpeg" alt="Slide 39">
+    <img class="slides" src="img/040.jpeg" alt="Slide 40">
+    <img class="slides" src="img/041.jpeg" alt="Slide 41">
+    <img class="slides" src="img/042.jpeg" alt="Slide 42">
+    <img class="slides" src="img/043.jpeg" alt="Slide 43">
+
+    <!-- Botões de navegação -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+</div>
+
+<script>
+    // Variável para controlar o slide atual
+    let stricker = "NARM";
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slides');
+    const totalSlides = slides.length;
+
+    // Função para mostrar o slide atual
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    // Função para mudar o slide
+    function changeSlide(n) {
+        currentSlide += n;
+        if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        } else if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        }
+        showSlide(currentSlide);
+    }
+
+    // Inicializar a apresentação de slides
+    window.onload = function() {
+        showSlide(currentSlide);
+    }
+</script>
+
+</body>
+</html>
